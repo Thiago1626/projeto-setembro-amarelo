@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="assets/respeito-em-todas-as-cores.png">
+<link rel="apple-touch-icon" href="assets/respeito-em-todas-as-cores.png">
+<title>Respeito em Todas as Cores | Educação e inclusão</title>
+<style>
+:root{--bg:#f7f6f1;--card:#fff;--text:#202721;--muted:#626960;--p:#9a7b10;--p2:#d6ae28;--line:#e4e2d8;--soft:#f2eedc;--r:12px;--sh:0 8px 24px rgba(35,43,35,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,"Segoe UI",system-ui,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65;letter-spacing:.002em}
+body.dark{--bg:#171914;--card:#22251f;--text:#f5f3e9;--muted:#c7c9bb;--line:#3c4037;--soft:#303226}
+body.hc{--bg:#000;--card:#000;--text:#fff;--muted:#fff}
+a{color:inherit}
+.skip{position:absolute;left:-9999px;background:#000;color:#fff;padding:.6rem 1rem;z-index:9999}
+.skip:focus{left:0}
+header{position:fixed;top:0;left:0;right:0;height:72px;z-index:1000;background:rgba(247,246,241,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+body.dark header{background:rgba(23,25,20,.94);border-color:var(--line)}
+.nav{max-width:1240px;margin:0 auto;height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 1.25rem;gap:.6rem}
+.logo{display:flex;align-items:center;gap:.65rem;font-weight:750;text-decoration:none;letter-spacing:-.025em}
+.mk{width:36px;height:36px;border-radius:10px;background:#e1b62b;display:grid;place-items:center;color:#263022;font-family:Georgia,serif;font-size:1.2rem;font-weight:900}
+.nav-links{display:flex;gap:.1rem;list-style:none;margin:0;padding:0;align-items:center}
+.nav-links a{text-decoration:none;padding:.45rem .58rem;color:var(--muted);font-weight:650;font-size:.82rem;transition:color .2s}
+.nav-links a:hover{background:none;color:var(--text)}
+.nav-actions{display:flex;align-items:center;gap:.45rem}
+.btn{border:1px solid transparent;cursor:pointer;border-radius:8px;padding:.72rem 1.05rem;font-weight:750;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;justify-content:center;transition:background .2s,border-color .2s,transform .2s}
+.btn-p{background:#2c382b;color:#fff}
+.btn-p:hover{background:#1d271d;transform:translateY(-1px)}
+.btn-g{background:transparent;border-color:rgba(255,255,255,.75);color:#fff}
+.btn-g:hover{background:rgba(255,255,255,.12)}
+.btn-g2{background:transparent;border-color:var(--p);color:#66510b}
+.ibtn{border:1px solid var(--line);background:transparent;color:var(--text);border-radius:7px;padding:.42rem .65rem;cursor:pointer;font-weight:700;font-size:.8rem}
+.ham{display:none;font-size:1.35rem;background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:.25rem .6rem;cursor:pointer}
+.sbox{display:flex;align-items:center;gap:.4rem;background:var(--card);border:1px solid var(--line);border-radius:7px;padding:.3rem .6rem}
+.sbox input{border:0;outline:0;background:transparent;color:var(--text);width:130px}
+main{padding-top:72px}
+section{padding:5rem 1.25rem;max-width:1240px;margin:0 auto}
+.head{text-align:center;max-width:700px;margin:0 auto 2.5rem}.head p{color:var(--muted)}
+.kick{display:inline-block;padding:.26rem .65rem;border-radius:5px;background:var(--soft);border:1px solid #dfd7ba;color:#695514;font-weight:800;font-size:.69rem;text-transform:uppercase;letter-spacing:.12em}
+body.dark .kick{background:#303226;color:#f2d35d;border-color:#565940}
+h1,h2,h3,h4{line-height:1.16}h1,h2{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.035em}h2{font-size:2.35rem;margin:.7rem 0}.grad{color:#8c7012}
+.hero{max-width:1240px;margin:0 auto;padding:3rem 1.25rem 2rem;display:grid;grid-template-columns:1.22fr .78fr;gap:1.25rem;align-items:stretch}
+.hero-card{background:#2c382b;border-radius:16px;color:#fff;padding:3.3rem;box-shadow:var(--sh);position:relative;overflow:hidden}
+.hero-card::after{content:"";position:absolute;width:380px;height:380px;right:-190px;bottom:-220px;border:52px solid rgba(223,181,38,.9);border-radius:50%;pointer-events:none}
+.hero h1{font-size:clamp(2.5rem,5vw,4.5rem);margin:.8rem 0 1rem;max-width:720px}.hero-card p{max-width:620px;color:#edf0e7;font-size:1.04rem;position:relative;z-index:1}
+.hbtns{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:1.2rem;position:relative;z-index:1}
+.hvis{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+.dd{border-radius:12px!important;padding:1rem;color:#273126!important;font-weight:750;text-align:left;min-height:132px;display:flex;flex-direction:column;justify-content:flex-end;animation:none!important;box-shadow:none;border:1px solid rgba(37,48,35,.1)}
+.dd:nth-child(1){background:#e8c53b!important}.dd:nth-child(2){background:#e8e4d2!important}.dd:nth-child(3){background:#ccd9c9!important}.dd:nth-child(4){background:#dce2d8!important}.dd:nth-child(5){background:#b9c9ba!important}.dd:nth-child(6){background:#f0d47c!important}
+.grid{display:grid;gap:1rem}
+.g4{grid-template-columns:repeat(4,1fr)}.g3{grid-template-columns:repeat(3,1fr)}.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--card);border-radius:var(--r);box-shadow:none;padding:1.45rem;border:1px solid var(--line);transition:border-color .25s,transform .25s}.card:hover{transform:translateY(-3px);border-color:#cdb765}
+.card .ico{font-size:1.55rem;width:44px;height:44px;display:grid;place-items:center;border-radius:9px;background:var(--soft);margin-bottom:.8rem}
+.card p{color:var(--muted);font-size:.94rem}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;padding:.2rem .55rem;border-radius:5px;background:var(--soft);color:#695514}
+.mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem}
+.month{cursor:pointer;border:1px solid rgba(0,0,0,.09);text-align:left;border-radius:10px;padding:1rem;color:#fff;font-weight:800;min-height:112px;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.month:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+.cpanel{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem;margin-top:1.2rem}
+.cc{border-radius:10px;overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:none}
+.ct{height:64px}.cb{padding:.8rem 1rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:none;align-items:center;justify-content:center;padding:1rem;z-index:2000}
+.modal.open{display:flex;animation:fade .3s}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.mbox{background:var(--card);color:var(--text);border-radius:14px;max-width:620px;width:100%;max-height:88vh;overflow:auto;padding:2rem;position:relative;animation:pop .35s}
+@keyframes pop{from{transform:scale(.9) translateY(20px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+.mx{position:absolute;top:.8rem;right:.8rem;border:0;background:#eee;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:1.1rem}
+.quiz{max-width:760px;margin:0 auto;background:var(--card);border-radius:14px;box-shadow:none;border:1px solid var(--line);padding:2rem}.opt{display:block;width:100%;text-align:left;margin:.5rem 0;padding:.9rem 1rem;border-radius:8px;border:1px solid var(--line);background:transparent;color:var(--text);cursor:pointer;font-weight:600;transition:.2s}
+.opt:hover{border-color:var(--p)}
+.opt.ok{background:#d4edda;border-color:#28a745}
+.opt.no{background:#f8d7da;border-color:#dc3545}
+.bar{height:10px;background:#eee;border-radius:999px;overflow:hidden;margin:.8rem 0}
+.bar i{display:block;height:100%;background:#c8a21c;transition:.4s}.chk{display:flex;gap:.7rem;align-items:flex-start;background:var(--card);border-radius:9px;padding:.9rem 1rem;border:1px solid var(--line);box-shadow:none;cursor:pointer;transition:.25s}
+.chk.done{background:linear-gradient(135deg,#d4edda,#c3f5d6);text-decoration:line-through}
+body.dark .chk.done{background:#123f2a;color:#fff}
+.chk input{width:22px;height:22px;accent-color:#00b894;flex-shrink:0;margin-top:.2rem}
+.flip{perspective:1000px;cursor:pointer;min-height:210px}
+.fin{position:relative;width:100%;height:100%;min-height:210px;transition:transform .6s;transform-style:preserve-3d}
+.flip.on .fin{transform:rotateY(180deg)}
+.ff,.fb{position:absolute;inset:0;backface-visibility:hidden;border-radius:16px;padding:1.2rem;display:flex;flex-direction:column;justify-content:center;box-shadow:var(--sh);background:var(--card)}
+.fb{transform:rotateY(180deg);background:#2c382b;color:#fff}.mural{background:#2c382b;border-radius:14px;color:#fff;padding:2.7rem;text-align:center;box-shadow:none}
+.mural blockquote{font-size:1.4rem;font-weight:700;min-height:80px}
+.acc{position:fixed;bottom:1rem;right:1rem;z-index:1500;display:flex;flex-direction:column;gap:.4rem}
+.acc button{border-radius:999px;border:1px solid #ccc;background:var(--card);color:var(--text);padding:.5rem .8rem;cursor:pointer;font-weight:800;box-shadow:var(--sh)}
+.reveal{opacity:0;transform:translateY(22px);transition:.55s}
+.reveal.vis{opacity:1;transform:none}
+footer{background:#20291f;color:#e8eadf;padding:3.5rem 1.25rem;margin-top:3rem}
+.fwrap{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:1.5rem}
+footer a{color:#e8eadf;text-decoration:none}footer a:hover{color:#fff;text-decoration:underline}
+.credits{max-width:1200px;margin:2.5rem auto 0;padding:1.6rem 0 0;border-top:1px solid rgba(232,234,223,.2)}
+.credits-title{text-align:center;margin:0 0 1rem;font-family:Georgia,"Times New Roman",serif;font-size:1.35rem;color:#f1cf4b}
+.credits-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem}
+.credit{padding:1rem 1.1rem;border:1px solid rgba(232,234,223,.2);border-radius:9px;background:rgba(255,255,255,.045)}
+.credit span{display:block;margin-bottom:.25rem;color:#d7b636;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.credit b{font-size:1rem}
+@media(max-width:960px){.hero{grid-template-columns:1fr}.g4,.mgrid{grid-template-columns:repeat(2,1fr)}.g3,.cpanel{grid-template-columns:repeat(2,1fr)}.fwrap{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.nav-links{display:none;position:absolute;top:72px;left:0;right:0;background:var(--card);flex-direction:column;padding:1rem;box-shadow:var(--sh);border-bottom:1px solid var(--line)}.nav-links.open{display:flex}.ham{display:block}.sbox{display:none}.sbox.m{display:flex;margin:1rem}.g4,.g3,.g2,.mgrid,.cpanel,.credits-grid{grid-template-columns:1fr}.hero{padding-top:1rem}.hero-card{padding:2rem}.hero h1{font-size:2.5rem}section{padding:3.5rem 1rem}.fwrap{grid-template-columns:1fr}}
+:focus-visible{outline:3px solid #c8a21c;outline-offset:2px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+/* Identidade visual e contraste refinados */
+:root{--bg:#f8f7f2;--card:#fff;--text:#18231b;--muted:#4d5a50;--p:#876400;--p2:#d9ad1c;--line:#d9ddd4;--soft:#f4f0df;--sh:0 12px 30px rgba(27,43,30,.10)}
+body.dark{--bg:#111711;--card:#1d271e;--text:#f7f8f2;--muted:#d2d8cd;--p:#ffd95b;--p2:#ffe383;--line:#526052;--soft:#293529;--sh:0 14px 35px rgba(0,0,0,.28)}
+body.dark .btn-p{background:#f2ca3d;color:#172016}body.dark .btn-p:hover{background:#ffe17b}
+body.dark .btn-g2{border-color:#f6d45f;color:#ffe58b}body.dark .card:hover{border-color:#f4d15d}
+body.dark .month{border-color:rgba(255,255,255,.34)}body.dark .mx{background:#3a463a;color:#fff}
+body.dark .bar{background:#3a463a}body.dark .opt.ok{background:#174f32;border-color:#62d18f;color:#fff}body.dark .opt.no{background:#652b31;border-color:#ff8993;color:#fff}
+body.dark .tag{background:#354434;color:#ffe486}body.dark .mural .btn{background:#fff6ce!important;color:#473600!important}
+.logo{gap:.55rem;max-width:310px}.logo-mark{width:42px;height:42px;object-fit:contain;border-radius:9px;background:#fff;padding:2px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+.logo span:last-child{font-size:.89rem;line-height:1.08}.hero-card{background:linear-gradient(135deg,#243a29 0%,#36583b 100%)}
+.hero-card::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 12% 15%,rgba(255,221,92,.19),transparent 30%);pointer-events:none}
+.hvis{grid-template-columns:1fr;min-height:100%}.brand-art{min-height:100%;border:1px solid #e1c348;border-radius:16px;display:flex;align-items:center;justify-content:center;padding:1.5rem;background:linear-gradient(145deg,#fffdf4,#efe8c8);box-shadow:var(--sh)}
+.brand-art img{display:block;width:min(100%,410px);max-height:460px;object-fit:contain;filter:drop-shadow(0 12px 12px rgba(30,39,25,.18))}.brand-art p{position:absolute;left:-9999px}
+/* A marca tem detalhes escuros; uma base clara mantém a leitura no modo escuro. */
+body.dark .brand-art{background:linear-gradient(145deg,#fffdf5,#efe5bd);border-color:#f2cf52}.kick{color:#584600;border-color:#d7c47c}.grad{color:#735900}
+body.dark .grad{color:#ffe072}body.dark .kick{background:#2e3a2d;border-color:#66745c;color:#ffe584}
+.card,.quiz,.cc,.chk{box-shadow:0 2px 0 rgba(24,35,27,.02)}.card:hover{box-shadow:var(--sh)}
+@media(max-width:680px){.logo span:last-child{display:none}.brand-art{min-height:310px}.nav-actions .ibtn{font-size:0;padding:.6rem}.nav-actions .ibtn::first-letter{font-size:1rem}}
+.pledge{max-width:820px;margin:0 auto;padding:2rem;border:1px solid #d8bd57;border-radius:16px;background:linear-gradient(135deg,#fffdf4,#f6edc9);box-shadow:var(--sh);text-align:center}.pledge p{color:#3f4b3e}.pledge-form{display:flex;gap:.7rem;max-width:590px;margin:1.25rem auto 0}.pledge input{flex:1;min-width:0;padding:.78rem .9rem;border:1px solid #a9a77d;border-radius:8px;background:#fff;color:#172016;font:inherit}.pledge-result{display:none;margin:1.25rem 0 0;padding:1rem;border-radius:10px;background:#fff;color:#263226;border:1px dashed #b59b36;font-weight:650}.pledge-actions{display:none;justify-content:center;gap:.7rem;flex-wrap:wrap;margin-top:.9rem}body.dark .pledge{background:linear-gradient(135deg,#fffdf4,#f6edc9);border-color:#f2cf52}body.dark .pledge p{color:#3f4b3e}@media(max-width:680px){.pledge-form{flex-direction:column}}
+@media print{body{background:#fff!important;color:#172016!important}body *{visibility:hidden!important}#compromisso,#compromisso *{visibility:visible!important}#compromisso{position:absolute!important;inset:0!important;display:flex!important;align-items:center!important;justify-content:center!important;padding:2cm!important;max-width:none!important}#compromisso .head{display:none!important}#compromisso .pledge{width:100%!important;max-width:17cm!important;box-shadow:none!important;border:2px solid #a58619!important;background:#fffdf4!important}#compromisso .pledge-form,#compromisso .pledge-actions{display:none!important}#compromisso .pledge-result{display:block!important;font-size:1.2rem!important;line-height:1.7!important}.acc{display:none!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteudo</a>
+<header>
+<nav class="nav" aria-label="Menu principal">
+<a class="logo" href="#inicio" aria-label="Respeito em Todas as Cores — ir para o início"><img class="logo-mark" src="assets/respeito-em-todas-as-cores.png" alt=""><span>Respeito em Todas as Cores</span></a>
+<button class="ham" id="ham" aria-label="Abrir menu" aria-expanded="false">☰</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#inicio">Início</a></li>
+<li><a href="#preconceito">O que é preconceito</a></li>
+<li><a href="#tipos">Tipos</a></li>
+<li><a href="#diversidade">Diversidade</a></li>
+<li><a href="#calendario">Calendário</a></li>
+<li><a href="#quiz">Quiz</a></li>
+<li><a href="#fazer">O que fazer</a></li>
+<li><a href="#sobre">Sobre</a></li>
+</ul>
+<div class="nav-actions">
+<div class="sbox" role="search"><span aria-hidden="true">🔎</span><input id="search" type="search" placeholder="Pesquisar no site..." aria-label="Pesquisar no site"></div>
+<button class="ibtn" id="darkBtn" aria-label="Alternar modo escuro">🌙 Modo escuro</button>
+</div>
+</nav>
+</header>
+<main id="conteudo">
+<div class="hero" id="inicio">
+<div class="hero-card reveal vis">
+<span class="kick" style="background:rgba(255,255,255,.25);border-color:#fff;color:#fff">Educação • Empatia • Inclusão</span>
+<h1>Respeitar as diferenças é construir um mundo melhor.</h1>
+<p>Conheça diferentes formas de preconceito, entenda seus impactos e descubra como atitudes simples podem contribuir para uma sociedade mais respeitosa, inclusiva e consciente.</p>
+<div class="hbtns">
+<a class="btn btn-p" href="#tipos">Conhecer os preconceitos</a>
+<a class="btn btn-g" href="#calendario">Ver calendário</a>
+</div>
+</div>
+<div class="hvis">
+<div class="brand-art"><img src="assets/respeito-em-todas-as-cores.png" alt="Logo Respeito em Todas as Cores — Educação e Inclusão"><p>Educação e inclusão em todas as cores.</p></div>
+</div>
+</div>
+<!--P2-->
+<section id="preconceito" aria-labelledby="t-pre">
+<div class="head reveal"><span class="kick">Conceitos</span><h2>O que é <span class="grad">preconceito?</span></h2><p>Entenda a diferença entre preconceito e discriminação e por que combatê-las.</p></div>
+<div class="grid g3" data-searchable>
+<article class="card reveal"><div class="ico">🧠</div><h3>O que é preconceito?</h3><p>É um julgamento antecipado e negativo sobre uma pessoa ou grupo, baseado em estereótipos, sem conhecer a realidade dela.</p><span class="tag">ideia / julgamento</span></article>
+<article class="card reveal"><div class="ico">🚫</div><h3>O que é discriminação?</h3><p>É quando o preconceito vira ação: excluir, ofender, negar oportunidades ou tratar alguém de forma desigual.</p><span class="tag">ação / comportamento</span></article>
+<article class="card reveal"><div class="ico">⚖️</div><h3>Qual a diferença?</h3><p>Preconceito é o pensamento estereotipado. Discriminação é a atitude injusta. Ambos machucam e precisam ser combatidos.</p><span class="tag">entenda</span></article>
+<article class="card reveal"><div class="ico">🏫</div><h3>No cotidiano</h3><p>Aparece em piadas ofensivas, apelidos, exclusão em grupos, comentários sobre sotaque, corpo, religião ou condição social.</p><span class="tag">cotidiano</span></article>
+<article class="card reveal"><div class="ico">💔</div><h3>Impactos</h3><p>Causa tristeza, ansiedade, baixa autoestima, isolamento e até abandono escolar. Ninguém aprende bem com medo.</p><span class="tag">impacto</span></article>
+<article class="card reveal"><div class="ico">🌱</div><h3>Por que combater?</h3><p>Porque toda pessoa merece dignidade. Respeito fortalece amizades, melhora a escola e constrói uma sociedade justa.</p><span class="tag">atitude</span></article>
+</div>
+</section>
+<section id="tipos" aria-labelledby="t-tipos">
+<div class="head reveal"><span class="kick">15 temas</span><h2 id="t-tipos">Tipos de <span class="grad">preconceito</span></h2><p>Clique em Saiba mais para ver explicação, exemplos e como combater.</p></div>
+<div class="grid g3" id="tiposGrid" data-searchable></div>
+</section>
+<!--P3-->
+<section id="diaadia" aria-labelledby="t-dia">
+<div class="head reveal"><span class="kick">Cotidiano</span><h2>Preconceito no <span class="grad">dia a dia</span></h2><p>Exclusão, piadas ofensivas, estereótipos, comentários e cyberbullying.</p></div>
+<div class="grid g3" data-searchable>
+<article class="card reveal"><div class="ico">🏫</div><h3>Escola</h3><p>Excluir colega do grupo, rir do sotaque, apelidos pelo corpo ou notas. <b>Faça:</b> incluir, acolher e avisar um professor.</p></article>
+<article class="card reveal"><div class="ico">🌐</div><h3>Internet</h3><p>Comentários ofensivos anônimos e compartilhamento de imagens sem permissão. <b>Faça:</b> não repassar, denunciar e bloquear.</p></article>
+<article class="card reveal"><div class="ico">📱</div><h3>Redes sociais</h3><p>Cyberbullying, montagens e cancelamento. <b>Faça:</b> printar, denunciar na plataforma e pedir ajuda a um adulto.</p></article>
+<article class="card reveal"><div class="ico">💼</div><h3>Trabalho</h3><p>Tratamento desigual e piadas sobre idade, gênero ou origem. <b>Faça:</b> registrar fatos e procurar ouvidoria/RH.</p></article>
+<article class="card reveal"><div class="ico">🏠</div><h3>Família</h3><p>Comentários sobre aparência, religião ou orientação. <b>Faça:</b> conversar com calma e explicar o impacto das palavras.</p></article>
+<article class="card reveal"><div class="ico">🏙️</div><h3>Espaços públicos</h3><p>Olhares, seguranças seguindo pessoas negras, falta de acessibilidade. <b>Faça:</b> não se calar e apoiar a vítima.</p></article>
+</div>
+</section>
+<section id="diversidade" aria-labelledby="t-div">
+<div class="head reveal"><span class="kick">Força coletiva</span><h2 id="t-div">A diversidade nos torna <span class="grad">mais fortes.</span></h2><p>Culturas, idades, crenças, corpos e formas de pensar diferentes enriquecem todos.</p></div>
+<div class="grid g4" data-searchable>
+<article class="card reveal"><div class="ico">🌍</div><h3>Diversidade cultural</h3><p>Festas, comidas, músicas e línguas. Aprender sobre outras culturas amplia o olhar.</p></article>
+<article class="card reveal"><div class="ico">✊</div><h3>Diversidade racial</h3><p>Todas as cores e origens merecem respeito e igualdade de oportunidades.</p></article>
+<article class="card reveal"><div class="ico">🛐</div><h3>Diversidade religiosa</h3><p>Respeitar todas as fés e também quem não tem religião.</p></article>
+<article class="card reveal"><div class="ico">👵</div><h3>Diferentes idades</h3><p>Crianças, jovens e idosos têm saberes valiosos. Etarismo exclui e empobrece.</p></article>
+<article class="card reveal"><div class="ico">♿</div><h3>Pessoas com deficiência</h3><p>Acessibilidade e autonomia: rampas, Libras, audiodescrição e atitude inclusiva.</p></article>
+<article class="card reveal"><div class="ico">🧩</div><h3>Formas de pensar</h3><p>Neurodiversidade inclui autismo, TDAH e mais. Rotinas flexíveis ajudam todos.</p></article>
+<article class="card reveal"><div class="ico">💬</div><h3>Diferentes culturas</h3><p>Sotaques e expressões regionais são riqueza, não motivo de piada.</p></article>
+<article class="card reveal"><div class="ico">🤝</div><h3>Inclusão</h3><p>Incluir é convidar, ouvir, adaptar e garantir participação de verdade.</p></article>
+</div>
+</section>
+<!--P4-->
+<section id="calendario" aria-labelledby="t-cal">
+<div class="head reveal"><span class="kick">12 meses</span><h2 id="t-cal">Calendário da <span class="grad">Conscientização</span></h2><p>Clique em um mês para ver campanha, cor, significado e datas.</p></div>
+<div class="mgrid" id="calGrid" data-searchable></div>
+<h3 style="text-align:center;margin-top:2rem">Painel Todas as Cores</h3>
+<div class="cpanel" id="colorPanel" data-searchable></div>
+</section>
+<section id="fazer" aria-labelledby="t-faz">
+<div class="head reveal"><span class="kick">Atitude</span><h2 id="t-faz">O que eu <span class="grad">posso fazer?</span></h2><p>Marque suas atitudes. Elas ficam salvas no navegador.</p><div class="bar" aria-hidden="true"><i id="fazBar" style="width:0%"></i></div><p><b id="fazTxt">0 de 9 concluídas</b></p></div>
+<div class="grid g3" id="fazList"></div>
+</section>
+<!--P5-->
+<section id="quiz" aria-labelledby="t-quiz">
+<div class="head reveal"><span class="kick">Teste seus conhecimentos</span><h2 id="t-quiz">Quiz do <span class="grad">Respeito</span></h2><p>10 perguntas sobre racismo, bullying, inclusão e campanhas.</p></div>
+<div class="quiz reveal" role="region" aria-live="polite">
+<div class="bar" aria-hidden="true"><i id="qBar" style="width:0%"></i></div>
+<p><b id="qCount">Pergunta 1 de 10</b></p>
+<h3 id="qTitle"></h3>
+<div id="qOpts"></div>
+<p id="qExp" style="background:#f6f3ff;padding:.8rem;border-radius:10px;display:none"></p>
+<div style="display:flex;gap:.6rem;margin-top:1rem;flex-wrap:wrap">
+<button class="btn btn-p" id="qNext" disabled>Próxima ➜</button>
+<button class="btn btn-g2" id="qRestart" type="button">Jogar novamente</button>
+</div>
+<div id="qRes" style="margin-top:1rem;font-weight:800"></div>
+</div>
+</section>
+<section id="situ" aria-labelledby="t-sit">
+<div class="head reveal"><span class="kick">Empatia na prática</span><h2 id="t-sit">O que você <span class="grad">faria?</span></h2><p>Escolha uma atitude e veja o comentário educativo.</p></div>
+<div class="quiz reveal"><h3 id="sTitle"></h3><div id="sOpts"></div><p id="sExp" style="display:none;background:#e8fff3;padding:.8rem;border-radius:10px"></p><div style="display:flex;gap:.6rem;margin-top:1rem"><button class="btn btn-p" id="sNext">Próxima situação ➜</button></div><p><b id="sCount"></b></p></div>
+</section>
+<section id="mito" aria-labelledby="t-mito">
+<div class="head reveal"><span class="kick">Clique para virar</span><h2 id="t-mito">Mito ou <span class="grad">Verdade</span></h2></div>
+<div class="grid g2" id="mitoGrid" data-searchable></div>
+</section>
+<section aria-labelledby="t-mural">
+<div class="head reveal"><span class="kick">Inspiração</span><h2 id="t-mural">Mural de <span class="grad">Frases</span></h2></div>
+<div class="mural reveal"><blockquote id="frase">Respeito começa quando aprendemos a ouvir.</blockquote><button class="btn" id="novaFrase" style="background:#fff;color:#66510b" aria-label="Mostrar nova frase">Nova frase</button></div>
+</section>
+<!--P6-->
+<section id="sobre" aria-labelledby="t-sobre">
+<div class="head reveal"><span class="kick">Sobre</span><h2 id="t-sobre">Sobre o <span class="grad">projeto</span></h2><p>O <b>Respeito em Todas as Cores</b> é uma plataforma educativa para estudantes aprenderem sobre preconceito, diversidade e inclusão de forma simples e acolhedora. Todo o conteúdo é educativo e respeitoso. Se você ou alguém passa por discriminação, converse com um adulto de confiança, professor ou profissional da escola.</p></div>
+<div class="grid g3"><div class="card"><div class="ico">💛</div><h3>Setembro Amarelo</h3><p>Valorização da vida e saúde mental: conversar, acolher e buscar ajuda de profissionais e pessoas de confiança. CVV: 188.</p></div><div class="card"><div class="ico">📚</div><h3>Como usar</h3><p>Navegue pelos cards, jogue o quiz, vire os mitos e marque suas atitudes. Use a pesquisa para achar temas rápido.</p></div><div class="card"><div class="ico">♿</div><h3>Acessibilidade</h3><p>Use os botões flutuantes: A+ aumenta a fonte, A- diminui, Contraste melhora a leitura e o modo escuro descansa a visão.</p></div></div>
+</section>
+<section id="compromisso" aria-labelledby="t-compromisso">
+<div class="head reveal"><span class="kick">Sua vez</span><h2 id="t-compromisso">Compromisso com o <span class="grad">respeito</span></h2><p>Uma atitude de hoje pode tornar a escola mais acolhedora para todos.</p></div>
+<div class="pledge reveal"><h3>Eu escolho respeitar as diferenças</h3><p>Escreva seu nome e crie seu compromisso pessoal.</p><div class="pledge-form"><input id="pledgeName" type="text" maxlength="60" placeholder="Digite seu nome" aria-label="Seu nome"><button class="btn btn-p" id="pledgeBtn" type="button">Criar compromisso</button></div><div class="pledge-result" id="pledgeResult" aria-live="polite"></div><div class="pledge-actions" id="pledgeActions"><button class="btn btn-g2" id="pledgePrint" type="button">Imprimir compromisso</button></div></div>
+</section>
+</main>
+<footer><div class="fwrap"><div><h3>Respeito em Todas as Cores</h3><p>Informação, respeito e empatia para construir uma sociedade melhor.</p></div><div><h4>Links</h4><p><a href="#inicio">Início</a><br><a href="#tipos">Preconceitos</a><br><a href="#diversidade">Diversidade</a><br><a href="#calendario">Calendário</a><br><a href="#quiz">Quiz</a><br><a href="#sobre">Sobre</a></p></div><div><h4>Apoio</h4><p>Disque 100 — Direitos Humanos<br>CVV — 188 (valorização da vida)<br>Procure um adulto de confiança.</p></div></div><div class="credits"><h3 class="credits-title">Créditos do projeto</h3><div class="credits-grid"><div class="credit"><span>Desenvolvido por</span><b>Thiago da Silva</b></div><div class="credit"><span>Professor orientador</span><b>Danilo Couto Silva</b></div><div class="credit"><span>Instituição</span><b>E.E Prof Amilcare Mattei</b></div></div></div><p style="text-align:center;margin-top:1.5rem;opacity:.65">Feito com respeito para a educação • 2026</p></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle"><div class="mbox"><button class="mx" id="mClose" aria-label="Fechar">✕</button><div id="mBody"></div></div></div>
+<div class="acc" role="group" aria-label="Acessibilidade"><button id="aMais" aria-label="Aumentar fonte">A+</button><button id="aMenos" aria-label="Diminuir fonte">A-</button><button id="aCont" aria-label="Alto contraste">Contraste</button></div>
+<!--J1-->
+<script>
+function $(s){return document.querySelector(s)}
+function $a(s){return document.querySelectorAll(s)}
+var TIPOS=[
+{i:"✊",t:"Racismo",d:"Discriminação por cor da pele, traços ou origem étnica.",e:"Racismo é tratar pessoas negras de forma desigual por causa da cor da pele ou origem. É crime no Brasil (Lei 7.716/89).",x:"Ex: seguir pessoa negra em loja, piadas racistas, negar emprego.",c:"Não repita piadas racistas, apoie a vítima, denuncie (Disque 100) e estude história e cultura afro-brasileira.",m:"Cada pessoa merece ser julgada pelo caráter, não pela cor."},
+{i:"🌍",t:"Xenofobia",d:"Preconceito contra pessoas de outra região ou país.",e:"Xenofobia é hostilizar migrantes, nordestinos ou estrangeiros por sotaque e cultura.",x:"Ex: imitar sotaque para humilhar, dizer 'volte para sua terra'.",c:"Acolha, valorize a cultura do outro e corrija comentários xenofóbicos.",m:"Todo lugar é feito de gente de muitos lugares."},
+{i:"♿",t:"Capacitismo",d:"Subestimar pessoas com deficiência.",e:"Capacitismo é tratar a pessoa com deficiência como incapaz ou invisível.",x:"Ex: falar só com o acompanhante, negar acessibilidade, usar deficiência como insulto.",c:"Pergunte como ajudar, garanta acessibilidade e use termos respeitosos: pessoa com deficiência.",m:"Acessibilidade é respeito em ação."},
+{i:"👵",t:"Etarismo",d:"Preconceito pela idade: jovem demais ou velho demais.",e:"Etarismo julga capacidade pela idade, contra jovens e idosos.",x:"Ex: 'isso não é coisa de velho', não ouvir jovens.",c:"Ouça todas as idades e valorize a experiência e a novidade.",m:"Cada idade tem um saber."},
+{i:"⚖️",t:"Machismo",d:"Ideia de que homens são superiores às mulheres.",e:"Machismo limita mulheres em casa, escola e trabalho.",x:"Ex: interromper mulheres, dizer que 'lugar de mulher é...'.",c:"Divida tarefas, ouça e apoie igualdade de oportunidades.",m:"Respeito não tem gênero."},
+{i:"🧡",t:"Gordofobia",d:"Julgar ou excluir pelo peso ou corpo.",e:"Gordofobia causa apelidos, exclusão e pressão estética cruel.",x:"Ex: apelidos, comentários sobre prato de comida.",c:"Não comente corpos, elogie atitudes e combata piadas sobre peso.",m:"Todo corpo merece respeito."},
+{i:"🛐",t:"Intolerância religiosa",d:"Desrespeito à fé do outro.",e:"É atacar religiões, roupas, símbolos ou festas sagradas.",x:"Ex: zombar de guias, turbantes, véus ou orações.",c:"Respeite todas as fés, pergunte para aprender e denuncie vandalismo.",m:"Fé diferente pede respeito igual."},
+{i:"💬",t:"Preconceito linguístico",d:"Zombar do sotaque ou jeito de falar.",e:"Toda forma de falar segue regras da sua comunidade. Errado é humilhar.",x:"Ex: corrigir com deboche, imitar sotaque nordestino ou caipira.",c:"Ouça o conteúdo, não o sotaque. Valorize expressões regionais.",m:"Sotaque é identidade, não erro."},
+{i:"💰",t:"Classismo",d:"Julgar pelo dinheiro, bairro ou escola.",e:"Classismo exclui quem tem menos recursos.",x:"Ex: zombar de roupa, celular ou bairro.",c:"Não julgue pela aparência, inclua todos nos grupos e trabalhos.",m:"Dignidade não tem preço."},
+{i:"😢",t:"Bullying",d:"Agressões repetidas contra um colega.",e:"Bullying é violência repetida: bater, xingar, excluir ou humilhar online e offline.",x:"Ex: apelidos diários, empurrões, grupo que exclui sempre o mesmo.",c:"Não ria, apoie a vítima, conte a um professor e denuncie.",m:"Coragem é defender, não humilhar."},
+{i:"🏳️‍🌈",t:"Homofobia",d:"Preconceito contra pessoas gays e lésbicas.",e:"Homofobia é ofender ou excluir por orientação afetiva. É crime (STF, Lei 7.716).",x:"Ex: xingamentos, impedir demonstrações de afeto.",c:"Respeite todas as famílias e afete, use nome e linguagem respeitosa.",m:"Amor com respeito é sempre bem-vindo."},
+{i:"⚧️",t:"Transfobia",d:"Desrespeito a pessoas trans.",e:"Transfobia é negar identidade, nome social e direitos.",x:"Ex: usar nome morto, impedir uso do banheiro adequado.",c:"Use nome social e pronomes corretos, acolha e denuncie.",m:"Identidade merece reconhecimento."},
+{i:"♀️",t:"Misoginia",d:"Ódio ou desprezo às mulheres.",e:"Misoginia vai além do machismo: é aversão e violência contra mulheres.",x:"Ex: ameaças, controle, desqualificar falas femininas.",c:"Não tolere violência, apoie denúncias (180) e promova igualdade.",m:"Nenhuma violência contra a mulher é aceitável."},
+{i:"✡️",t:"Antissemitismo",d:"Preconceito contra judeus.",e:"Antissemitismo ataca história, fé e cultura judaicas com estereótipos e ódio.",x:"Ex: piadas nazistas, vandalismo em sinagogas.",c:"Estude a história, repudie símbolos de ódio e denuncie.",m:"Memória e respeito combatem o ódio."},
+{i:"🎭",t:"Preconceito cultural",d:"Achar uma cultura melhor que outra.",e:"É desvalorizar comidas, músicas, roupas e festas de outros povos.",x:"Ex: chamar funk, forró ou maracatu de 'música inferior'.",c:"Experimente, pergunte e celebre a diversidade cultural.",m:"Cultura diferente é cultura viva."}
+];
+function openModal(html){$("#mBody").innerHTML=html;$("#modal").classList.add("open")}
+function closeModal(){$("#modal").classList.remove("open")}
+$("#mClose").onclick=closeModal;
+$("#modal").addEventListener("click",function(e){if(e.target.id==="modal")closeModal()});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal()});
+function renderTipos(){
+var g=$("#tiposGrid");g.innerHTML="";
+TIPOS.forEach(function(o,idx){
+var a=document.createElement("article");a.className="card reveal vis";
+a.innerHTML='<div class="ico">'+o.i+'</div><h3>'+o.t+'</h3><p>'+o.d+'</p><button class="btn btn-p" style="margin-top:.6rem" aria-label="Saiba mais sobre '+o.t+'">Saiba mais</button>';
+a.querySelector("button").onclick=function(){openModal('<span class="tag">'+o.i+' '+o.t+'</span><h2 id="mTitle">'+o.t+'</h2><p><b>Explicação:</b> '+o.e+'</p><p><b>Exemplos:</b> '+o.x+'</p><p><b>Como combater:</b> '+o.c+'</p><p style="background:#f0eaff;padding:.8rem;border-radius:10px"><b>💛 Mensagem:</b> '+o.m+'</p>')};
+g.appendChild(a);
+});
+}
+renderTipos();
+<!--J2-->
+var MESES=[
+{m:"Janeiro",c:"Janeiro Branco",cor:"#e8e8e8",tc:"#333",sig:"Saúde mental e bem-estar.",e:"Janeiro Branco convida a cuidar das emoções, conversar e buscar ajuda profissional quando preciso.",d:"Dia 13: Dia Mundial de Combate à Depressão.",msg:"Cuidar da mente é tão importante quanto cuidar do corpo."},
+{m:"Fevereiro",c:"Fevereiro Roxo e Laranja",cor:"#9b59b6",tc:"#fff",sig:"Alzheimer, lúpus, fibromialgia e leucemia.",e:"Mês de conscientizar sobre doenças crônicas e importância do diagnóstico precoce e do respeito aos pacientes.",d:"Dia 15: Câncer infantil. Dia 28/29: Doenças raras.",msg:"Informação gera empatia e apoio."},
+{m:"Março",c:"Março Lilás",cor:"#c39bd3",tc:"#3a1040",sig:"Prevenção do câncer do colo do útero + direitos das mulheres.",e:"Além da saúde, março celebra a luta das mulheres por igualdade. Dia 8: Dia Internacional da Mulher.",d:"Dia 8: Mulher. Vacina HPV e Papanicolau salvam vidas.",msg:"Respeitar mulheres é todos os dias."},
+{m:"Abril",c:"Abril Azul",cor:"#3498db",tc:"#fff",sig:"Conscientização sobre o autismo.",e:"Abril Azul promove inclusão de pessoas autistas, respeito às diferenças sensoriais e comunicação acessível.",d:"Dia 2: Dia Mundial do Autismo.",msg:"Incluir é adaptar o mundo, não forçar a pessoa a se esconder."},
+{m:"Maio",c:"Maio Amarelo",cor:"#f1c40f",tc:"#333",sig:"Segurança no trânsito.",e:"Maio Amarelo alerta para atitudes que salvam vidas no trânsito: atenção, respeito e responsabilidade.",d:"Semana Nacional do Trânsito.",msg:"No trânsito, respeito salva vidas."},
+{m:"Junho",c:"Junho Vermelho",cor:"#e74c3c",tc:"#fff",sig:"Doação de sangue.",e:"Junho Vermelho incentiva a doação regular de sangue. Um doador pode salvar até 4 vidas.",d:"Dia 14: Dia Mundial do Doador de Sangue.",msg:"Doe sangue, doe vida."},
+{m:"Julho",c:"Julho Amarelo",cor:"#f9e79f",tc:"#333",sig:"Hepatites virais.",e:"Mês de prevenção, testagem e vacinação contra hepatites B e C.",d:"Dia 28: Dia Mundial contra Hepatites.",msg:"Prevenção e teste cuidam de você e de todos."},
+{m:"Agosto",c:"Agosto Lilás",cor:"#8e44ad",tc:"#fff",sig:"Enfrentamento da violência contra a mulher.",e:"Agosto Lilás divulga a Lei Maria da Penha (Lei 11.340/2006) e canais como o 180.",d:"7 de agosto: Lei Maria da Penha.",msg:"Violência contra a mulher é crime. Denuncie: 180."},
+{m:"Setembro",c:"Setembro Amarelo",cor:"#ffdf00",tc:"#333",sig:"Valorização da vida e saúde mental.",e:"Setembro Amarelo promove acolhimento, conversa sem julgamento e busca de ajuda. Falar ajuda. CVV 188.",d:"Dia 10: Prevenção da vida. CVV: 188.",msg:"Você é importante. Conversar e pedir ajuda é um ato de coragem."},
+{m:"Outubro",c:"Outubro Rosa",cor:"#ff6fa5",tc:"#fff",sig:"Câncer de mama.",e:"Outubro Rosa incentiva autoexame, mamografia e apoio a pacientes e famílias.",d:"Outubro: mutirões de mamografia.",msg:"Cuidado e informação salvam vidas."},
+{m:"Novembro",c:"Novembro Azul + Consciência Negra",cor:"#2e86c1",tc:"#fff",sig:"Saúde do homem e igualdade racial.",e:"Novembro Azul: prevenção do câncer de próstata. Dia 20: Consciência Negra, homenagem a Zumbi dos Palmares e luta antirracista.",d:"Dia 20: Consciência Negra. Exames preventivos.",msg:"Cuidar da saúde e combater o racismo é dever de todos."},
+{m:"Dezembro",c:"Dezembro Vermelho",cor:"#c0392b",tc:"#fff",sig:"HIV/AIDS e ISTs.",e:"Dezembro Vermelho combate desinformação e preconceito contra pessoas vivendo com HIV, além de incentivar prevenção.",d:"Dia 1: Dia Mundial contra AIDS.",msg:"Informação combate o vírus e o preconceito."}
+];
+function renderCal(){
+var g=$("#calGrid");g.innerHTML="";
+MESES.forEach(function(o,i){
+var b=document.createElement("button");b.className="month";b.style.background=o.cor;b.style.color=o.tc||"#fff";
+b.setAttribute("aria-label","Ver "+o.c);
+b.innerHTML="<span>"+o.m+"<br><small>"+o.c+"</small></span><small>Toque para saber mais ➜</small>";
+b.onclick=function(){openModal('<span class="tag">'+o.m+'</span><h2 id="mTitle">'+o.c+'</h2><p><b>Cor da campanha:</b> <span style="display:inline-block;width:18px;height:18px;border-radius:50%;background:'+o.cor+';border:1px solid #999;vertical-align:middle"></span></p><p><b>Significado:</b> '+o.sig+'</p><p>'+o.e+'</p><p><b>Datas:</b> '+o.d+'</p><p style="background:#fff8d6;padding:.8rem;border-radius:10px;color:#333"><b>💛 '+o.msg+'</b></p>')};
+g.appendChild(b);
+});
+var p=$("#colorPanel");p.innerHTML="";
+MESES.forEach(function(o){
+var d=document.createElement("div");d.className="cc";
+d.innerHTML='<div class="ct" style="background:'+o.cor+'"></div><div class="cb"><b>'+o.c+'</b><br><small style="color:var(--muted)">'+o.sig+'</small></div>';
+p.appendChild(d);
+});
+}
+renderCal();
+<!--J3-->
+var FAZER=["Respeitar as diferenças","Não julgar uma pessoa pela aparência","Não compartilhar conteúdo preconceituoso","Combater o bullying","Denunciar situações de discriminação","Ouvir e acolher","Aprender sobre outras culturas","Pensar antes de fazer comentários","Incentivar ambientes inclusivos"];
+function renderFazer(){
+var list=$("#fazList");list.innerHTML="";
+var saved=[];try{saved=JSON.parse(localStorage.getItem("rtc_fazer")||"[]")}catch(e){}
+FAZER.forEach(function(t,i){
+var on=saved.indexOf(i)>-1;
+var l=document.createElement("label");l.className="chk"+(on?" done":"");
+l.innerHTML='<input type="checkbox" '+(on?"checked":"")+' aria-label="'+t+'"><span>☐ '+t+'</span>';
+l.querySelector("input").onchange=function(e){
+var s=[];try{s=JSON.parse(localStorage.getItem("rtc_fazer")||"[]")}catch(x){}
+if(e.target.checked){if(s.indexOf(i)<0)s.push(i);l.classList.add("done");l.querySelector("span").textContent="☑ "+t+" 🎉"}
+else{s=s.filter(function(v){return v!==i});l.classList.remove("done");l.querySelector("span").textContent="☐ "+t}
+localStorage.setItem("rtc_fazer",JSON.stringify(s));updFaz();
+};
+if(on)l.querySelector("span").textContent="☑ "+t+" 🎉";
+list.appendChild(l);
+});
+updFaz();
+}
+function updFaz(){
+var s=[];try{s=JSON.parse(localStorage.getItem("rtc_fazer")||"[]")}catch(e){}
+$("#fazBar").style.width=(s.length/FAZER.length*100)+"%";
+$("#fazTxt").textContent=s.length+" de "+FAZER.length+" concluídas"+(s.length===FAZER.length?" — Parabéns! Você é agente do respeito! 🎉":"");
+}
+renderFazer();
+var QUIZ=[
+{q:"Uma piada racista na escola deve ser:",o:["Ignorada, pois é só brincadeira","Repetida para ser engraçado","Questionada e denunciada, pois racismo é crime"],a:2,e:"Piadas racistas machucam e reforçam o racismo. Racismo é crime (Lei 7.716/89)."},
+{q:"Bullying é:",o:["Uma brincadeira normal","Agressão repetida que causa sofrimento"],a:1,e:"Bullying se repete e causa medo e tristeza. Apoie a vítima e avise um adulto."},
+{q:"Capacitismo significa:",o:["Subestimar pessoas com deficiência","Ajudar com respeito sempre que preciso"],a:0,e:"Capacitismo é tratar a pessoa como incapaz. O certo é garantir acessibilidade e autonomia."},
+{q:"Um aluno novo com sotaque diferente chega. O respeitoso é:",o:["Imitar o sotaque para rir","Excluir do grupo","Acolher e incluir na conversa"],a:2,e:"Sotaque é identidade. Acolher fortalece amizades."},
+{q:"Intolerância religiosa é:",o:["Respeitar todas as fés","Zombar da religião do colega"],a:1,e:"Zombar da fé alheia é intolerância. Respeito vale para todas as crenças."},
+{q:"Preconceito linguístico acontece quando:",o:["Corrigimos com gentileza","Zombamos do jeito de falar de alguém"],a:1,e:"Julgar pelo sotaque exclui. Ouça a ideia, não o sotaque."},
+{q:"Diversidade significa:",o:["Todo mundo igual","Diferenças que enriquecem o grupo"],a:1,e:"Culturas, corpos e ideias diferentes tornam o grupo mais criativo e forte."},
+{q:"Inclusão na prática é:",o:["Deixar a pessoa só olhando","Adaptar e garantir participação de todos"],a:1,e:"Incluir é convidar, adaptar e ouvir de verdade."},
+{q:"Setembro Amarelo fala sobre:",o:["Segurança no trânsito","Valorização da vida e saúde mental"],a:1,e:"Setembro Amarelo promove acolhimento e conversa. Precisa de ajuda? CVV 188."},
+{q:"Abril Azul conscientiza sobre:",o:["Doação de sangue","Autismo e inclusão"],a:1,e:"Abril Azul (dia 2) promove respeito e inclusão de pessoas autistas."}
+];
+var qi=0,score=0,lock=false;
+function showQ(){
+lock=false;$("#qExp").style.display="none";$("#qNext").disabled=true;
+$("#qCount").textContent="Pergunta "+(qi+1)+" de "+QUIZ.length;
+$("#qBar").style.width=(qi/QUIZ.length*100)+"%";
+$("#qTitle").textContent=QUIZ[qi].q;
+var box=$("#qOpts");box.innerHTML="";
+QUIZ[qi].o.forEach(function(op,i){
+var b=document.createElement("button");b.className="opt";b.textContent=op;
+b.setAttribute("aria-label","Alternativa: "+op);
+b.onclick=function(){if(lock)return;lock=true;
+var btns=box.querySelectorAll("button");
+btns[QUIZ[qi].a].classList.add("ok");
+if(i===QUIZ[qi].a){score++;$("#qRes").textContent="✅ Acertou!"}else{b.classList.add("no");$("#qRes").textContent="❌ Não foi dessa vez."}
+var e=$("#qExp");e.style.display="block";e.innerHTML="<b>Explicação:</b> "+QUIZ[qi].e;
+$("#qNext").disabled=false;$("#qNext").textContent=(qi===QUIZ.length-1?"Ver resultado 🏁":"Próxima ➜");
+};
+box.appendChild(b);
+});
+$("#qRes").textContent="";
+}
+$("#qNext").onclick=function(){
+if(qi<QUIZ.length-1){qi++;showQ()}else{
+$("#qBar").style.width="100%";
+var m=score<=4?"💛 Continue aprendendo! Releia os cards e tente de novo. Cada passo conta.":score<=7?"🌟 Muito bem! Você já sabe bastante sobre respeito. Compartilhe o que aprendeu!":"🏆 Incrível! Você é um agente do respeito em todas as cores!";
+$("#qTitle").textContent="Você acertou "+score+" de "+QUIZ.length+" perguntas.";
+$("#qOpts").innerHTML="";$("#qExp").style.display="none";$("#qNext").disabled=true;$("#qCount").textContent="Resultado final";
+$("#qRes").textContent=m;
+}};
+$("#qRestart").onclick=function(){qi=0;score=0;showQ()};
+showQ();
+<!--J4-->
+var SIT=[
+{t:"Um aluno novo com sotaque diferente é imitado pelos colegas.",o:["Rir junto para enturmar","Pedir para pararem e incluir o aluno","Ignorar e sair de perto"],a:1,e:"Respeito é defender: peça para parar, acolha o colega e chame o professor se continuar."},
+{t:"Uma colega com deficiência foi deixada de fora do trabalho em grupo.",o:["Deixar como está","Convidar, perguntar como ela prefere participar e adaptar tarefas"],a:1,e:"Inclusão é garantir participação real, com acessibilidade e escuta."},
+{t:"Alguém manda no grupo da turma um meme preconceituoso.",o:["Repassar porque é engraçado","Responder que aquilo ofende, não repassar e denunciar"],a:1,e:"Não repasse conteúdo preconceituoso. Questione e denuncie na plataforma."},
+{t:"Uma amiga conta que sofre apelidos pelo corpo todos os dias.",o:["Dizer que é frescura","Ouvir, acolher e sugerir contar a um adulto de confiança"],a:1,e:"Acolher sem julgar ajuda muito. Bullying precisa de apoio adulto."},
+{t:"Um colega zomba da religião de outro no intervalo.",o:["Ficar rindo junto","Explicar que fé merece respeito e mudar o assunto"],a:1,e:"Todas as fés merecem respeito. Aprender sobre elas combate a intolerância."}
+];
+var si=0;
+function showS(){
+$("#sCount").textContent="Situação "+(si+1)+" de "+SIT.length;
+$("#sTitle").textContent=SIT[si].t;
+$("#sExp").style.display="none";
+var box=$("#sOpts");box.innerHTML="";
+SIT[si].o.forEach(function(op,i){
+var b=document.createElement("button");b.className="opt";b.textContent=op;
+b.onclick=function(){
+var btns=box.querySelectorAll("button");btns.forEach(function(x){x.disabled=true});
+btns[SIT[si].a].classList.add("ok");
+if(i!==SIT[si].a)b.classList.add("no");
+var e=$("#sExp");e.style.display="block";
+e.innerHTML=(i===SIT[si].a?"✅ Atitude respeitosa! ":"💡 Quase! ")+SIT[si].e;
+};
+box.appendChild(b);
+});
+}
+$("#sNext").onclick=function(){si=(si+1)%SIT.length;showS()};
+showS();
+var MITOS=[
+{q:"Preconceito só acontece quando alguém fala algo ofensivo.",r:"MITO",e:"Também acontece em olhares, exclusão, piadas e tratamento desigual, mesmo sem xingamento."},
+{q:"Piadas preconceituosas são inofensivas se for brincadeira.",r:"MITO",e:"Piadas reforçam estereótipos e machucam. Brincadeira boa não humilha."},
+{q:"Racismo é crime no Brasil.",r:"VERDADE",e:"Sim. Lei 7.716/89. Racismo e injúria racial são crimes. Denuncie: Disque 100."},
+{q:"Sotaque é erro de português.",r:"MITO",e:"Sotaque é identidade regional. O erro é humilhar quem fala diferente."},
+{q:"Pessoas com deficiência não podem participar de tudo.",r:"MITO",e:"Com acessibilidade e respeito, todos podem participar com autonomia."},
+{q:"Diversidade deixa o grupo mais forte.",r:"VERDADE",e:"Ideias diferentes geram criatividade, empatia e melhores soluções."},
+{q:"Cyberbullying não é tão grave quanto presencial.",r:"MITO",e:"Machuca igual ou mais, pois se espalha rápido. Print, bloqueie e denuncie."},
+{q:"Ouvir e acolher ajuda a combater o preconceito.",r:"VERDADE",e:"Escuta sem julgamento fortalece a vítima e incentiva a buscar ajuda."}
+];
+function renderMitos(){
+var g=$("#mitoGrid");g.innerHTML="";
+MITOS.forEach(function(o){
+var d=document.createElement("div");d.className="flip";d.tabIndex=0;
+d.setAttribute("role","button");d.setAttribute("aria-label",o.q+" Ative para ver resposta");
+d.innerHTML='<div class="fin"><div class="ff"><b>'+o.q+'</b><br><small style="color:var(--muted)">Clique para virar ↻</small></div><div class="fb"><b>'+o.r+'</b><br><small>'+o.e+'</small></div></div>';
+function tg(){d.classList.toggle("on")}
+d.onclick=tg;d.onkeydown=function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();tg()}};
+g.appendChild(d);
+});
+}
+renderMitos();
+var pledgeName=$("#pledgeName"),pledgeResult=$("#pledgeResult"),pledgeActions=$("#pledgeActions");
+function createPledge(){
+var name=pledgeName.value.trim()||"Eu";
+pledgeResult.textContent=name+", me comprometo a ouvir, acolher e respeitar todas as diferenças todos os dias.";
+pledgeResult.style.display="block";pledgeActions.style.display="flex";
+try{localStorage.setItem("rtc_pledge",pledgeName.value.trim())}catch(e){}
+}
+$("#pledgeBtn").onclick=createPledge;
+pledgeName.addEventListener("keydown",function(e){if(e.key==="Enter")createPledge()});
+$("#pledgePrint").onclick=function(){window.print()};
+try{var savedPledge=localStorage.getItem("rtc_pledge");if(savedPledge){pledgeName.value=savedPledge;createPledge()}}catch(e){}
+<!--J5-->
+var FRASES=["Respeito começa quando aprendemos a ouvir.","Ser diferente não significa ser inferior.","Conhecimento também combate o preconceito.","Todos merecem respeito e dignidade.","Ninguém é melhor por cor, fé ou sotaque.","Incluir é um ato diário de amor.","Palavras podem acolher ou ferir: escolha acolher.","Empatia é se colocar no lugar do outro.","A diversidade nos torna mais fortes.","Você é importante. Conversar é um ato de coragem."];
+$("#novaFrase").onclick=function(){
+var f=$("#frase");var n=Math.floor(Math.random()*FRASES.length);
+f.style.opacity=0;setTimeout(function(){f.textContent=FRASES[n];f.style.opacity=1},250);
+};
+$("#search").addEventListener("input",function(e){
+var q=e.target.value.toLowerCase().trim();
+var cards=document.querySelectorAll("[data-searchable] .card, [data-searchable] .month, [data-searchable] .cc, #mitoGrid .flip");
+if(!q){cards.forEach(function(c){c.style.display=""});return}
+cards.forEach(function(c){c.style.display=c.textContent.toLowerCase().indexOf(q)>-1?"":"none"});
+var secs=document.querySelectorAll("section");
+if(q){var first=null;document.querySelectorAll("[data-searchable] .card").forEach(function(c){if(!first&&c.style.display!=="none")first=c});
+if(first)first.scrollIntoView({behavior:"smooth",block:"center"})}
+});
+function setDark(v){
+document.body.classList.toggle("dark",v);
+$("#darkBtn").textContent=v?"☀️ Modo claro":"🌙 Modo escuro";
+try{localStorage.setItem("rtc_dark",v?"1":"0")}catch(e){}
+}
+$("#darkBtn").onclick=function(){setDark(!document.body.classList.contains("dark"))};
+try{if(localStorage.getItem("rtc_dark")==="1")setDark(true)}catch(e){}
+var fs=16;try{fs=parseInt(localStorage.getItem("rtc_fs")||"16")}catch(e){}
+document.documentElement.style.fontSize=fs+"px";
+$("#aMais").onclick=function(){fs=Math.min(22,fs+1);document.documentElement.style.fontSize=fs+"px";try{localStorage.setItem("rtc_fs",fs)}catch(e){}};
+$("#aMenos").onclick=function(){fs=Math.max(13,fs-1);document.documentElement.style.fontSize=fs+"px";try{localStorage.setItem("rtc_fs",fs)}catch(e){}};
+$("#aCont").onclick=function(){document.body.classList.toggle("hc")};
+var ham=$("#ham"),nl=$("#navLinks");
+ham.onclick=function(){var o=nl.classList.toggle("open");ham.setAttribute("aria-expanded",o?"true":"false")};
+nl.querySelectorAll("a").forEach(function(a){a.onclick=function(){nl.classList.remove("open")}});
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add("vis");io.unobserve(x.target)}})},{threshold:.12});
+document.querySelectorAll(".reveal").forEach(function(el){io.observe(el)});
+</script>
+</body>
+</html>
