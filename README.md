@@ -1,244 +1,315 @@
+<div align="center">
 🌈 Respeito em Todas as Cores
-
 Educação • Empatia • Inclusão
 
-O Respeito em Todas as Cores é uma plataforma educativa desenvolvida para ensinar, de forma simples e interativa, conceitos relacionados a preconceito, discriminação, diversidade, inclusão e respeito.
+Uma plataforma educativa para aprender, refletir e construir ambientes mais respeitosos.
 
-O projeto foi pensado especialmente para o ambiente escolar, utilizando cards informativos, calendário de conscientização, quiz, situações interativas e recursos de acessibilidade.
+<br>
 
-📚 Sobre o projeto
 
-A proposta é ajudar estudantes a compreenderem diferentes formas de preconceito e refletirem sobre atitudes que podem tornar a escola e a sociedade mais acolhedoras.
 
-Entre os temas abordados estão:
 
-Racismo
 
-Xenofobia
 
-Capacitismo
+</div>
+💛 Sobre o projeto
 
-Etarismo
+Respeito em Todas as Cores é uma plataforma educativa criada para abordar temas relacionados a:
 
-Machismo
+Preconceito • Diversidade • Inclusão • Empatia • Respeito
 
-Gordofobia
+O projeto transforma conteúdos educativos em uma experiência interativa, permitindo que estudantes aprendam por meio de cards, jogos, quiz, situações do cotidiano e recursos de acessibilidade.
 
-Intolerância religiosa
+A ideia é simples:
 
-Preconceito linguístico
+informar → refletir → respeitar → agir.
 
-Classismo
+🌈 O que você encontra aqui?
+🧠 Aprenda
 
-Bullying
+Conteúdos explicativos sobre diferentes formas de preconceito, com exemplos e orientações sobre como combatê-los.
 
-Homofobia
+🎨 Conheça a diversidade
 
-Transfobia
-
-Misoginia
-
-Antissemitismo
-
-Preconceito cultural
-
-✨ Funcionalidades
-🧠 Conteúdo educativo
-
-Explicações sobre preconceito e discriminação, mostrando suas diferenças, exemplos do cotidiano e formas de enfrentamento.
-
-🎨 Tipos de preconceito
-
-Cards interativos apresentam diferentes formas de preconceito, com:
-
-Explicação
-
-Exemplos
-
-Formas de combater
-
-Mensagens educativas
+Uma seção dedicada à diversidade cultural, racial, religiosa, etária, corporal, neurodiversidade e inclusão.
 
 📅 Calendário da conscientização
 
-Calendário com campanhas distribuídas ao longo dos 12 meses, incluindo temas como:
+Um calendário interativo apresenta campanhas e datas importantes ao longo do ano.
 
-Janeiro Branco
+🎮 Interaja
 
-Fevereiro Roxo e Laranja
+O aprendizado também acontece brincando:
 
-Março Lilás
-
-Abril Azul
-
-Maio Amarelo
-
-Junho Vermelho
-
-Julho Amarelo
-
-Agosto Lilás
-
-Setembro Amarelo
-
-Outubro Rosa
-
-Novembro Azul e Consciência Negra
-
-Dezembro Vermelho
-
-📝 Quiz
-
-Quiz com 10 perguntas sobre respeito, diversidade, inclusão, bullying e campanhas de conscientização.
-
-O sistema informa:
-
-Resposta correta
-
-Resposta incorreta
-
-Explicação educativa
-
-Pontuação final
+🧠 Quiz do Respeito
 
 🤝 O que você faria?
 
-Situações do cotidiano são apresentadas para que o usuário escolha uma atitude e receba uma explicação educativa.
-
 🔄 Mito ou Verdade
-
-Cards interativos permitem descobrir se determinadas afirmações sobre preconceito e diversidade são verdadeiras ou falsas.
 
 💬 Mural de frases
 
-Frases relacionadas a respeito, empatia, diversidade e inclusão podem ser alternadas pelo usuário.
-
 💛 Compromisso com o respeito
-
-O visitante pode informar seu nome e gerar um compromisso pessoal:
-
-"Eu me comprometo a ouvir, acolher e respeitar todas as diferenças todos os dias."
-
-O compromisso pode ser impresso.
 
 ♿ Acessibilidade
 
-O site possui recursos como:
+O projeto também conta com ferramentas para tornar a experiência mais acessível:
 
-Aumento do tamanho da fonte
+🔍 Aumentar fonte
 
-Redução do tamanho da fonte
+🔎 Diminuir fonte
 
-Alto contraste
+🌓 Modo escuro
 
-Modo escuro
+⚫ Alto contraste
 
-Navegação por teclado
+⌨️ Navegação por teclado
 
-Link para pular diretamente ao conteúdo
+📱 Layout responsivo
 
-Suporte a prefers-reduced-motion
+♿ Respeito às preferências de redução de movimento
 
-💾 Salvamento local
+📚 Temas abordados
 
-Algumas preferências e atividades são armazenadas no navegador utilizando localStorage, incluindo:
+A plataforma apresenta 15 temas relacionados ao preconceito e à discriminação:
 
-Modo escuro
+Tema	Tema	Tema
+✊ Racismo	🌍 Xenofobia	♿ Capacitismo
+👵 Etarismo	⚖️ Machismo	🧡 Gordofobia
+🛐 Intolerância religiosa	💬 Preconceito linguístico	💰 Classismo
+😢 Bullying	🏳️‍🌈 Homofobia	⚧️ Transfobia
+♀️ Misoginia	✡️ Antissemitismo	🎭 Preconceito cultural
 
-Tamanho da fonte
+Cada tema possui explicação, exemplos, formas de combate e uma mensagem educativa.
 
-Atividades concluídas
+🎯 Objetivo
 
-Compromisso criado
+O projeto foi desenvolvido com o objetivo de utilizar a tecnologia como uma ferramenta de educação e conscientização.
 
-🔎 Pesquisa
+Queremos incentivar:
 
-O site possui uma ferramenta de pesquisa que permite localizar rapidamente conteúdos relacionados aos temas apresentados nos cards, calendário e atividades.
+🌱 Empatia
 
-🛠️ Tecnologias utilizadas
+👂 Escuta
 
-O projeto foi desenvolvido utilizando tecnologias web básicas:
+🤝 Respeito
+
+🌎 Diversidade
+
+♿ Inclusão
+
+📚 Conhecimento
+
+💛 Solidariedade
+
+🛠️ Tecnologias
+
+O projeto foi desenvolvido utilizando tecnologias web, sem necessidade de frameworks externos.
+
+HTML5
+CSS3
+JavaScript
+LocalStorage
+Intersection Observer API
 
 HTML5
 
+Responsável pela estrutura e organização semântica da página.
+
 CSS3
+
+Utilizado para:
+
+Identidade visual
+
+Responsividade
+
+Animações
+
+Modo escuro
+
+Alto contraste
+
+Cards
+
+Layouts em grid
+
+Acessibilidade visual
 
 JavaScript
 
+Responsável pelas funcionalidades interativas:
+
+Quiz
+
+Modal
+
+Calendário
+
+Mito ou Verdade
+
+Situações interativas
+
+Pesquisa
+
+Modo escuro
+
+Controle de fonte
+
+Compromisso pessoal
+
 LocalStorage
 
-Intersection Observer API
+Menu mobile
 
-Não é necessário utilizar frameworks ou bibliotecas externas para executar a página.
-
-📁 Estrutura sugerida
-respeito-em-todas-as-cores/
+📂 Estrutura
+📦 respeito-em-todas-as-cores
 │
-├── index.html
+├── 📄 index.html
 │
-├── assets/
-│   └── respeito-em-todas-as-cores.png
+├── 📁 assets
+│   └── 🖼️ respeito-em-todas-as-cores.png
 │
-└── README.md
+└── 📄 README.md
 
 🚀 Como executar
-1. Baixe ou clone o projeto
+
+Não é necessário instalar dependências.
+
+1. Clone o projeto
 git clone SEU_REPOSITORIO
 
 2. Entre na pasta
 cd respeito-em-todas-as-cores
 
-3. Abra o projeto
+3. Execute
 
-Basta abrir o arquivo:
+Abra:
 
 index.html
 
 
-em um navegador moderno.
+em seu navegador.
 
-Também é possível utilizar uma extensão como Live Server no Visual Studio Code para executar o projeto localmente.
+Ou utilize uma extensão como Live Server no Visual Studio Code.
 
-🌐 Compatibilidade
+💾 Experiência personalizada
 
-O projeto foi desenvolvido para funcionar em navegadores modernos, tanto em computadores quanto em dispositivos móveis.
+O site utiliza o LocalStorage do navegador para manter algumas preferências e atividades.
 
-O layout possui comportamento responsivo para diferentes tamanhos de tela.
+São armazenados:
 
-🎯 Objetivos
+🌙 Preferência de modo escuro
 
-O projeto busca:
+🔤 Tamanho da fonte
 
-Incentivar o respeito às diferenças;
+✅ Atividades concluídas
 
-Combater preconceitos e estereótipos;
+💛 Compromisso pessoal
 
-Estimular a empatia;
+Assim, o usuário pode fechar e voltar ao site sem perder essas informações.
 
-Promover a inclusão;
+📱 Responsividade
 
-Apresentar informações de maneira acessível;
+O projeto foi pensado para diferentes dispositivos.
 
-Incentivar estudantes a refletirem sobre suas próprias atitudes;
+🖥️ Desktop
+      ↓
+💻 Notebook
+      ↓
+📱 Smartphone
+      ↓
+📲 Tablet
 
-Utilizar a tecnologia como ferramenta de educação e conscientização.
+
+O layout se adapta automaticamente ao tamanho da tela, mantendo os conteúdos acessíveis e organizados.
+
+🧩 Experiência interativa
+
+O projeto não é apenas uma página informativa.
+
+Ele foi construído para incentivar o usuário a participar.
+
+🧠 Quiz
+
+Teste seus conhecimentos sobre:
+
+Racismo
+
+Bullying
+
+Inclusão
+
+Diversidade
+
+Campanhas de conscientização
+
+🤔 O que você faria?
+
+Situações inspiradas no cotidiano apresentam diferentes possibilidades de ação e mostram uma explicação educativa após a escolha.
+
+🔄 Mito ou Verdade
+
+Cards interativos permitem descobrir a resposta e entender o motivo.
+
+💛 Meu compromisso
+
+O visitante pode criar uma mensagem pessoal de compromisso com o respeito e imprimi-la.
+
+🎨 Identidade visual
+
+A identidade do projeto utiliza principalmente:
+
+🟢 Verde — acolhimento e equilíbrio
+
+🟡 Amarelo/Dourado — esperança, valorização e destaque
+
+⚪ Tons claros — leveza e acessibilidade
+
+🌈 Diferentes cores — representação da diversidade
+
+A proposta visual é transmitir uma sensação de acolhimento, educação e respeito.
 
 👨‍💻 Créditos
+<div align="center">
+Desenvolvido por
 
-Desenvolvido por: Thiago da Silva
+Thiago da Silva
 
-Professor orientador: Danilo Couto Silva
+Professor orientador
 
-Instituição: E.E. Prof. Amilcare Mattei
+Danilo Couto Silva
+
+Instituição
+
+E.E. Prof. Amilcare Mattei
+
+</div>
+💡 Frase do projeto
+<div align="center">
+💛 “Respeitar as diferenças é construir um mundo melhor.”
+</div>
+🤝 Contribuição
+
+Ideias, sugestões e melhorias são bem-vindas.
+
+Se você encontrou algum problema ou possui uma sugestão para melhorar a plataforma, fique à vontade para contribuir com o projeto.
 
 📌 Aviso
 
-O conteúdo do projeto possui finalidade educativa e informativa.
+Este projeto possui finalidade educativa e informativa.
 
-Em situações de discriminação, violência ou bullying, procure um adulto de confiança, professor, profissional da escola ou serviço apropriado de apoio.
+Em situações de preconceito, discriminação, bullying ou violência, procure um adulto de confiança, professor, profissional da escola ou serviço adequado de apoio.
 
-💛 Mensagem
+<div align="center">
+🌈 Respeito em Todas as Cores
 
-Respeitar as diferenças é construir um mundo melhor.
+Educação para transformar.
+Informação para conscientizar.
+Respeito para incluir.
 
-Feito com respeito para a educação. 🌈
+<br>
+
+⭐ Feito com respeito para a educação • 2026
+
+</div>
